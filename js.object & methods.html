@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Step 1: Create the initial object with 5 keys
+let nums = {
+    num1: 1,
+    num2: 2,
+    num3: 3,
+    num4: 4,
+    num5: 5
+};
+
+// Step 2: Define a validation function
+function validateObject(obj) {
+    // Check if the object has exactly 5 keys
+    return Object.keys(obj).length === 5;
+}
+
+// Step 3: Function to add new elements if valid
+function addNewElement(obj, newKey, newValue) {
+    if (validateObject(obj)) {
+        obj[newKey] = newValue;
+        console.log(`Added ${newKey}: ${newValue}`);
+    } else {
+        console.log("Validation failed: Object is not valid.");
+    }
+}
+
+// Example usage:
+console.log("Initial object:", nums);
+
+// Attempt to add a new element
+addNewElement(nums, 'num6', 6); // This will succeed if the validation checks out
+console.log("Updated object:", nums); // Check the updated object
+
+// Attempt to add another element
+addNewElement(nums, 'num7', 7); // This will fail due to validation
+console.log("Final object:", nums); // Check the final object
+
+    </script>
+</body>
+</html>
